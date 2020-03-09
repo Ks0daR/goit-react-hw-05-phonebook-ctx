@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import withThemeContext from '../hoc/withThemeContext';
 
 import styles from './InputForm.module.css';
 
@@ -20,18 +21,21 @@ class InputForm extends Component {
 
   render() {
     const { name, number } = this.state;
+    const { theme } = this.props;
     return (
       <>
         <form className={styles.Form} onSubmit={this.hendleSubmit}>
           <label>
-            <h3>Name:</h3>
+            <h3 className={theme ? styles.Title : styles.TitleDark}>Name:</h3>
             <input
               value={name}
               placeholder="Enter name..."
               name="name"
               onChange={this.getInputValue}
             />
-            <h3>Phone number: </h3>
+            <h3 className={theme ? styles.title : styles.TitleDark}>
+              Phone number:{' '}
+            </h3>
             <input
               value={number}
               name="number"
@@ -50,4 +54,4 @@ class InputForm extends Component {
   }
 }
 
-export default InputForm;
+export default withThemeContext(InputForm);

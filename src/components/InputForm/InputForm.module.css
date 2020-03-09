@@ -10,8 +10,23 @@
   border: none;
   background-color: rgb(104, 104, 233);
   font-size: 20px;
+  padding: 0 4px;
   margin: 20px;
   border-radius: 5px;
   color: aliceblue;
   cursor: pointer;
+}
+
+.SubmitDark {
+  composes: Submit;
+  background-color: aliceblue;
+  color: rgb(104, 104, 233);
+}
+
+.Title {
+  color: #000;
+}
+
+.TitleDark {
+  color: #aaa;
 }
