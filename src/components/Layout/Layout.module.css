@@ -1,4 +1,4 @@
-.Layout{
-    width: 1200px;
-    margin: auto;
+.Layout {
+  max-width: 1200px;
+  margin: auto;
 }

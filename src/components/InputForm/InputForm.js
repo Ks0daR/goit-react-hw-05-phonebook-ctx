@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import withLog from '../hoc/withLog';
 import styles from './InputForm.module.css';
 
 class InputForm extends Component {
@@ -48,4 +49,4 @@ class InputForm extends Component {
   }
 }
 
-export default InputForm;
+export default withLog(InputForm);
