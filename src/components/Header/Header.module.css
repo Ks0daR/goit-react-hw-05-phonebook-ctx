@@ -4,3 +4,9 @@
   color: #fff;
   text-align: center;
 }
+
+.HeaderDark {
+  composes: Header;
+  background-color: darkblue;
+  color: #aaa;
+}

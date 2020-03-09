@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import withLog from '../hoc/withLog';
+
 import styles from './InputForm.module.css';
 
 class InputForm extends Component {
@@ -15,6 +15,7 @@ class InputForm extends Component {
   hendleSubmit = e => {
     e.preventDefault();
     this.props.getInfo(this.state);
+    this.setState({ name: '', number: '' });
   };
 
   render() {
@@ -49,4 +50,4 @@ class InputForm extends Component {
   }
 }
 
-export default withLog(InputForm);
+export default InputForm;
