@@ -4,7 +4,7 @@
   width: 800px;
 }
 
-.listElement {
+.ListElement {
   display: flex;
   justify-content: space-between;
   font-family: sans-serif;
@@ -13,7 +13,12 @@
   padding: 10px;
 }
 
-.buttonList {
+.ListElementDark {
+  composes: ListElement;
+  color: #aaa;
+}
+
+.Button {
   text-align: right;
   border: none;
   background-color: rgb(104, 104, 233);
@@ -22,17 +27,17 @@
   color: aliceblue;
   cursor: pointer;
 }
+.ButtonDark {
+  composes: Button;
+  background-color: aliceblue;
+  color: rgb(104, 104, 233);
+}
 
-.title {
+.Title {
   text-align: center;
 }
 
-.titleDark {
-  composes: title;
+.TitleDark {
+  composes: Title;
   color: #aaa;
-}
-
-.listElementDark {
-  composes: listElement;
-  filter: invert(100%);
 }

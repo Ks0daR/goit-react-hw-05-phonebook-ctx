@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import withThemeContext from '../hoc/withThemeContext';
 
 import styles from './InputForm.module.css';
 
 class InputForm extends Component {
+  static propTypes = {
+    theme: PropTypes.bool.isRequired,
+    onToggle: PropTypes.func.isRequired,
+    getInfo: PropTypes.func.isRequired,
+  };
+
   state = {
     name: '',
     number: '',
@@ -34,7 +41,7 @@ class InputForm extends Component {
               onChange={this.getInputValue}
             />
             <h3 className={theme ? styles.title : styles.TitleDark}>
-              Phone number:{' '}
+              Phone number:
             </h3>
             <input
               value={number}
@@ -43,7 +50,10 @@ class InputForm extends Component {
               placeholder="Enter phone..."
             />
             <br />
-            <button className={styles.Submit} type="submit">
+            <button
+              className={theme ? styles.Submit : styles.SubmitDark}
+              type="submit"
+            >
               Add contact
             </button>
             <br />

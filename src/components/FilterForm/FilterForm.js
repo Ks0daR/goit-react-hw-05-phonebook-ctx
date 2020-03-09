@@ -1,10 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './FilterForm.module.css';
 
-export default function FilterForm({ filterValue, onSearchQuery }) {
+function FilterForm({ filterValue, onSearchQuery }) {
   return (
     <label className={styles.search}>
       <input value={filterValue} onChange={onSearchQuery} />
     </label>
   );
 }
+
+FilterForm.propTypes = {
+  filterValue: PropTypes.string.isRequired,
+  onSearchQuery: PropTypes.func.isRequired,
+};
+
+export default FilterForm;

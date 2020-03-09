@@ -6,17 +6,17 @@ import styles from './Contacts.module.css';
 const Contacts = ({ elements, onRemoveContacts, theme }) => {
   return (
     <>
-      <h2 className={theme ? styles.title : styles.titleDark}>Contacts</h2>
+      <h2 className={theme ? styles.Title : styles.TitleDark}>Contacts</h2>
       <ul className={styles.list}>
         {elements.map(({ id, name, number }) => (
           <li
-            className={theme ? styles.listElement : styles.listElementDark}
+            className={theme ? styles.ListElement : styles.ListElementDark}
             key={id}
           >
             {name} {number}
             <button
               type="button"
-              className={styles.buttonList}
+              className={theme ? styles.Button : styles.ButtonDark}
               onClick={() => onRemoveContacts(id)}
             >
               Delete
