@@ -33,7 +33,7 @@ class PhoneBookPage extends Component {
   };
 
   checkedDoubleInput = name => {
-    return this.state.contacts.find(contact => contact.name === name);
+    return this.state.contacts.some(contact => contact.name === name);
   };
 
   filteredContacts = () => {

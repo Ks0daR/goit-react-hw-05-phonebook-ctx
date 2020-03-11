@@ -1,4 +1,5 @@
 import React from 'react';
+import ContactListItem from './ContactListItem';
 import withThemeContext from '../hoc/withThemeContext';
 import PropTypes from 'prop-types';
 import styles from './Contacts.module.css';
@@ -9,19 +10,14 @@ const Contacts = ({ elements, onRemoveContacts, theme }) => {
       <h2 className={theme ? styles.Title : styles.TitleDark}>Contacts</h2>
       <ul className={styles.list}>
         {elements.map(({ id, name, number }) => (
-          <li
-            className={theme ? styles.ListElement : styles.ListElementDark}
+          <ContactListItem
             key={id}
-          >
-            {name} {number}
-            <button
-              type="button"
-              className={theme ? styles.Button : styles.ButtonDark}
-              onClick={() => onRemoveContacts(id)}
-            >
-              Delete
-            </button>
-          </li>
+            id={id}
+            name={name}
+            number={number}
+            onRemove={onRemoveContacts}
+            theme={theme}
+          />
         ))}
       </ul>
     </>
